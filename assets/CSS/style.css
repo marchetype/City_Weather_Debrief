@@ -1,0 +1,88 @@
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --darkGrey: #0f0f0f;
+    --lightGrey: #4d4d4d;
+    --darkGreen: rgb(26, 76, 12);
+    --lightGreen: rgb(60, 166, 30);
+    --neonGreen: rgb(64, 255, 0);
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--darkGrey);
+}
+
+body {
+    color: var(--neonGreen);
+    font-family: 'Share Tech Mono', monospace;
+}
+
+main {
+    padding: 15px;
+    background-color: var(--black);
+}
+
+input {
+    background-color: var(--black);
+    color: var(--neonGreen);
+}
+
+h2 {
+    font-size: 25px;
+}
+
+button {
+    background-color: var(--black);
+    color: var(--lightGreen);
+}
+
+::placeholder {
+    color: var(--lightGreen);
+}
+
+#webpage-header {
+    text-align: center;
+    background-color: var(--darkGrey);
+    
+}
+
+#search {
+    border: 5px solid var(--darkGreen);
+    background-color: var(--black);
+    
+}
+
+#search div {
+    margin: 15px;
+    padding: 8px;
+    border: 3px solid var(--lightGreen);
+    background-color: var(--darkGrey);
+}
+
+#city-search {
+    height: auto;
+}
+
+#history {
+    min-height: 400px;
+}
+
+#weather {
+    background-color: var(--black);
+
+
+}
+
+#weather article {
+    padding: 5px;
+    border: 3px solid var(--lightGreen);
+    height: 50%;
+
+}
