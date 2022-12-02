@@ -19,7 +19,7 @@
   <body>
 
     <header class="row" id="webpage-header">
-        <h1 class="col-12">Weather Forecast</h1>
+        <h1 class="col-12">WEATHER FORECAST</h1>
     </header>
 
     <main class="row">
@@ -27,17 +27,17 @@
         <aside class="col-3" id="search">
 
             <div id="city-search">
-                <h2>Please search for a city</h2>
+                <h2>PLEASE SEARCH FOR A CITY</h2>
                     <form class="row">
                         <area class="col-1"></area>
-                        <input type="text" placeholder="city..." class="col-5" id="city-input">
-                        <button class="col-5" id="city-submit">Submit</button>
+                        <input type="text" placeholder="city..." class="col-5" id="city-input" style="text-transform: uppercase;">
+                        <button class="col-5" id="city-submit">SUBMIT</button>
                         <area class="col-1"></area>
                     </form>
             </div>
 
             <div id="history">
-                <h3>Search History</h3>
+                <h3>SEARCH HISTORY</h3>
                 <ul id="history-display">
 
                 </ul>
@@ -48,15 +48,21 @@
         <section class="col-9" id="weather">
 
             <article class="row" id="current-climate">
-                <h4>City</h4>
-                <p>weather</p>
+                <h4>CITY</h4>
+                <p>WEATHER</p>
 
             </article>
 
-            <article class="row" id="five-day">
-                <h5>Five-Day Forecast</h5>
+            <article id="five-day">
+                <h5>FIVE-DAY FORECAST</h5>
                 <ul class="row">
-
+                    <li id="forecast-block" class="col-2"></li>
+                    <li id="forecast-block" class="col-2"></li>
+                    <li id="forecast-block" class="col-2"></li>
+                    <li id="forecast-block" class="col-2"></li>
+                    <li id="forecast-block" class="col-2"></li>
+                    
+                    
                 </ul>
             </article>
 

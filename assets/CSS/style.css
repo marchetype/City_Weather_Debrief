@@ -32,6 +32,15 @@ main {
 input {
     background-color: var(--black);
     color: var(--neonGreen);
+    border: 1px solid var(--darkGreen);
+    border-right: 0px;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none;
+    border: 1px solid var(--lightGreen);
+    border-right: 0px;
 }
 
 h2 {
@@ -41,6 +50,7 @@ h2 {
 button {
     background-color: var(--black);
     color: var(--lightGreen);
+    text-transform: uppercase;
 }
 
 ::placeholder {
@@ -55,8 +65,7 @@ button {
 
 #search {
     border: 5px solid var(--darkGreen);
-    background-color: var(--black);
-    
+    background-color: var(--black);    
 }
 
 #search div {
@@ -71,7 +80,18 @@ button {
 }
 
 #history {
-    min-height: 400px;
+    height: 400px;
+}
+
+#history-display {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#history-display button {
+    margin: 0px 10px 5px 0px;
 }
 
 #weather {
@@ -85,4 +105,12 @@ button {
     border: 3px solid var(--lightGreen);
     height: 50%;
 
+}
+
+#forecast-block {
+    border: 4px solid var(--lightGreen);
+    list-style: none;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
 }
