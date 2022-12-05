@@ -29,6 +29,10 @@ main {
     background-color: var(--black);
 }
 
+li {
+    list-style: none;
+}
+
 input {
     background-color: var(--black);
     color: var(--neonGreen);
