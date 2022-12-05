@@ -96,6 +96,22 @@ function historyWeather (event) {
     weatherForLocation(city);
 }
 
+//the function below displays the current weather data on the main section of the page.
+function displayWeatherForLocation (data) {
+    while (currentIcon.firstChild) {
+        currentIcon.removeChild(currentIcon.firstChild);
+    }
+    let img = document.createElement('img');
+    console.log(data);
+    img.src = 'http://openweathermap.org/img/wn/'+ data.weather[0].icon +'@2x.png';
+    currentIcon.appendChild(img);
+    currentCityEl.textContent = 'CITY: '+ data.name +' (today)';
+    currentTempEl.textContent = 'Temperature: ' + data.main.temp + ' ℉';
+    currentHumidityEl.textContent = 'Humidity: ' + data.main.humidity + '%';
+    currentWindEl.textContent = 'Wind Speed: ' + data.wind.speed + " MPH";
+
+}
+
 function weatherForLocation(city) {
     let cityFetch = 'https://api.openweathermap.org/data/2.5/weather?appid='+weatherAPIKey+'&q='+city+'&units=imperial'
     //console.log(cityFetch);
@@ -112,21 +128,6 @@ function weatherForLocation(city) {
 
 }
 
-//the function below displays the current weather data on the main section of the page.
-function displayWeatherForLocation (data) {
-    while (currentIcon.firstChild) {
-        currentIcon.removeChild(currentIcon.firstChild);
-    }
-    let img = document.createElement('img');
-    console.log(data);
-    img.src = 'http://openweathermap.org/img/wn/'+ data.weather[0].icon +'@2x.png';
-    currentIcon.appendChild(img);
-    currentCityEl.textContent = 'CITY: '+ data.name +' (today)';
-    currentTempEl.textContent = 'Temperature: ' + data.main.temp + ' ℉';
-    currentHumidityEl.textContent = 'Humidity: ' + data.main.humidity + '%';
-    currentWindEl.textContent = 'Wind Speed: ' + data.wind.speed + " MPH";
-
-}
 
 //The function below will remove all child nodes before rendering the updated history.
 function removeChildNodes() {
@@ -166,7 +167,6 @@ function setLocalStorage (event) {
     renderHistoryButtons();
 }
 
-renderHistoryButtons();
 
 submitBtnEl.addEventListener('click', cityFinder);
 historyList.addEventListener('click', historyWeather);
