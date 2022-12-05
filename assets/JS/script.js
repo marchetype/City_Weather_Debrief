@@ -1,9 +1,8 @@
+//declaring variables in global scope
 let weatherAPIKey = '42b6cbf2d98d089461b00b4835dba3b7';
-
 let submitBtnEl = document.getElementById('city-submit');
 let cityInputEl = document.getElementById('city-input');
 let historyList = document.getElementById('history-display');
-console.dir(historyList);
 let currentCityEl = document.getElementById('location-display');
 let currentTempEl = document.getElementById('temp');
 let currentHumidityEl = document.getElementById('humidity');
@@ -15,15 +14,15 @@ let forecastIcon3 = document.getElementById('day-3-weather');
 let forecastIcon4 = document.getElementById('day-4-weather');
 let forecastIcon5 = document.getElementById('day-5-weather');
 let forecastIconArr = [forecastIcon1, forecastIcon2, forecastIcon3, forecastIcon4, forecastIcon5]
-//variables below are declared for the five day forecast
 
+//function below stores the input within variable 'city' for use in function weatherForLocation();
 function cityFinder(event) {
     event.preventDefault();
     let city = cityInputEl.value;
     //console.log(city);
     weatherForLocation(city);
 }
-
+//function below will render all forecast data to screen
 function showForecast(data2) {
     $('#day-1-date').text(data2.list[5].dt_txt);
     $('#day-1-temperature').text(data2.list[5].main.temp + '°F');
@@ -111,7 +110,7 @@ function displayWeatherForLocation (data) {
     currentWindEl.textContent = 'Wind Speed: ' + data.wind.speed + " MPH";
 
 }
-
+//function below uses a fetch link along with the parameter of city (established before) to get data from OpenWeatherAPI
 function weatherForLocation(city) {
     let cityFetch = 'https://api.openweathermap.org/data/2.5/weather?appid='+weatherAPIKey+'&q='+city+'&units=imperial'
     //console.log(cityFetch);
@@ -149,7 +148,7 @@ function renderHistoryButtons() {
 
     
 }
-// The function below will eventually be used to set localStorage.   
+// The function below will be used to set localStorage.   
 function setLocalStorage (event) {
     let cityName = cityInputEl.value
     event.preventDefault();
@@ -167,7 +166,7 @@ function setLocalStorage (event) {
     renderHistoryButtons();
 }
 
-
+//event listeners added below to call functions cityFinder(), historyWeather(), and setLocalStorage().
 submitBtnEl.addEventListener('click', cityFinder);
 historyList.addEventListener('click', historyWeather);
 submitBtnEl.addEventListener('click', setLocalStorage);
