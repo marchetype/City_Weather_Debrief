@@ -1,6 +1,6 @@
 ## README
 
-# Mark Barstow / module-6-challenge
+# Mark Barstow / City_Weather_Debrief
 
 ## Goals
 
